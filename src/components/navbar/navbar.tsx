@@ -3,7 +3,7 @@ return(
 
     <div className="bg-lime-600 p-5 shadow-lg flex justify-between">
         <h1>WattLink</h1>
-        <ul className="flex gap-5">
+        <ul className="flex gap-5 cursor-pointer">
             <li>home</li>
             <li> produtos </li>
             <li> login </li>
