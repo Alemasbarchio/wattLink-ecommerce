@@ -1,13 +1,13 @@
-import { CarWid } from "../cartwidget/cartwidget"
+import { CarWid } from "../CartWidget/CartWidget"
 
-//import logo from './img/logo-eletrica.png';
+import logo from '../../assets/img/logo-eletrica.png';
 const NavBar=()=>{
 return(
 
     <div className="bg-gray-300 p-5 shadow-lg flex justify-evenly">
        
        <div>
-        <img className="w-10"  src='./img/logo-eletrica.png' alt="logo"/>
+        <img className="w-10"  src={logo} alt="logo"/>
        
         </div>
         <ul className="flex gap-5 cursor-pointer justify-center items-center">

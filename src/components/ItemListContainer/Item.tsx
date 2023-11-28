@@ -17,8 +17,8 @@ const Item=({name,id,price,imgProduct,qtdStock}:Products)=>{
     return(
         
           <ul>
-            <li className="bg-slate-200 gap-50 p-2">
-            <img className="w-60" src={imgProduct} alt="" />
+            <li className="bg-slate-200 p-2">
+            <img className="w-56" src={imgProduct} alt="" />
             <h1>{id}</h1>
             <h2 className="text-green-800 font-bold">{name}</h2>
             <h3>{price}</h3>

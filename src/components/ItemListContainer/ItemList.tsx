@@ -15,7 +15,7 @@ const ItemList = ({ items }: ItemListProps) => {
 
   
   return (
-    <div className='flex flex-wrap gap-5'>
+    <div className='flex flex-wrap gap-10 justify-center'>
       {items.map((item, index) => (
         <Item key={index} {...item} />
 
