@@ -19,24 +19,31 @@ const CounterItem = ({ stock, initial, onAdd }: ItemCountProps) => {
   }, [stockQtd])
 
   const addcart = () => {
+   
     if (value <= stockQtd && stockQtd !== 0) {
       console.log(`Adicionar ${value}  itens ao carrinho`);
       setStockQtd((prevStok => prevStok - value))
       onAdd(value);
     }
     else {
-      console.log("estoque indisponível")
-    }
+      console.log("Estoque Indisponivel")
+      }
   }
 
   return (
 
     <div className="p-2 flex flex-col items-center justify-center gap-5" >
       <input type="number" min="1" max={stockQtd} value={value} onChange={handleInputChange}
-        className="w-24 no-spinner border p-2 rounded-md focus:outline-none focus:border-green-600"
+        className=" border-gray-950 w-24 no-spinner border p-2 rounded-md focus:outline-none focus:border-green-600"
+        
       />
+      <div >
+        <label>Estoque disponível</label>
+         <h2>{stockQtd}</h2>
+      </div>
+      
       <button onClick={addcart} className=" bg-green-600 border p-2 rounded-lg focus:border-blue-300 hover:opacity-75"> Adicionar ao Carrinho</button>
-
+        
     </div>
 
   )

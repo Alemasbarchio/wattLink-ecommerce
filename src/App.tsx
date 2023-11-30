@@ -68,6 +68,7 @@ function App() {
       <NavBar />
       <LogoContents />
       <ProdList greeting='Produtos do carrinho' />
+      
     </div>
   );
 }
