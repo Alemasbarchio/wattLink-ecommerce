@@ -1,5 +1,6 @@
 import { ChangeEvent, useEffect, useState } from "react";
 
+
 interface ItemCountProps {
   stock: number;
   initial: number;
@@ -15,35 +16,37 @@ const CounterItem = ({ stock, initial, onAdd }: ItemCountProps) => {
 
   }
   useEffect(() => {
-    console.log("No estoque tem " + stockQtd);
+    
+    
+   
   }, [stockQtd])
 
   const addcart = () => {
    
     if (value <= stockQtd && stockQtd !== 0) {
-      console.log(`Adicionar ${value}  itens ao carrinho`);
       setStockQtd((prevStok => prevStok - value))
       onAdd(value);
     }
-    else {
-      console.log("Estoque Indisponivel")
-      }
+    
   }
 
   return (
 
-    <div className="p-2 flex flex-col items-center justify-center gap-5" >
-      <input type="number" min="1" max={stockQtd} value={value} onChange={handleInputChange}
+    <div  className="p-2 flex flex-col items-center justify-center gap-5" >
+      <input type="number" min="0" max={stockQtd} value={value} onChange={handleInputChange}
         className=" border-gray-950 w-24 no-spinner border p-2 rounded-md focus:outline-none focus:border-green-600"
-        
+       
       />
       <div >
-        <label>Estoque disponível</label>
-         <h2>{stockQtd}</h2>
-      </div>
+      {stockQtd < 1 ? <label className="text-red-500">Estoque indisponível : {stockQtd}</label> : <label>Estoque disponível: {stockQtd}</label>}
       
-      <button onClick={addcart} className=" bg-green-600 border p-2 rounded-lg focus:border-blue-300 hover:opacity-75"> Adicionar ao Carrinho</button>
-        
+      </div>
+      <div className="flex gap-3 justify-center items-center">
+      <button  onClick={addcart} className={`bg-green-600 border p-2 rounded-lg focus:border-blue-300 ${
+        stockQtd < 1 ? 'opacity-50 cursor-not-allowed' : 'hover:opacity-75'
+          }`}disabled={stockQtd < 1 ?  true  :  false }>  Adicionar ao Carrinho </button>
+       
+        </div>
     </div>
 
   )
