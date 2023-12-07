@@ -3,7 +3,7 @@ import { CounterItem } from "../Counter/itemcount";
 
 
 interface ItemDetailProps{
-  id?:number;
+  
   name:string;
   price:number;
   imgProduct:string;
@@ -13,7 +13,7 @@ interface ItemDetailProps{
          
 }
 
-const ItemDetail=({id,name,price,imgProduct,qtdStock}:ItemDetailProps)=>{
+const ItemDetail=({name,price,imgProduct,qtdStock}:ItemDetailProps)=>{
 
  
 
@@ -27,7 +27,7 @@ const ItemDetail=({id,name,price,imgProduct,qtdStock}:ItemDetailProps)=>{
          
          <ul className="flex justify-center items-center text-center  " >
        
-          <li className="border-green-300 border p-2  w-3/12 flex flex-col">
+          <li className="border-green-300 border p-2  w-2/12 flex flex-col">
           <h2 className="text-green-800 font-bold text-center text-4xl" >{name}</h2>
           <img src={imgProduct}/> 
           <p className="text-2xl"> {price}</p>
