@@ -11,7 +11,7 @@ function Home() {
       <NavBar />
       <LogoContents />
       <ProdList greeting='Produtos do carrinho' />
-      
+          
     </div>
   );
 }
