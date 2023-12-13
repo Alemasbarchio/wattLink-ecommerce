@@ -12,7 +12,7 @@ interface Props {
   return (
     <div className="w-full  bg-slate-50 flex flex-col gap-10">
       <h1>{greeting}</h1>
-       <ItemList/>
+      <ItemList/>
       
     </div>
 
