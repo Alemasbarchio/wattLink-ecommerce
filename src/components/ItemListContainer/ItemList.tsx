@@ -1,9 +1,10 @@
 import { Item } from './Item';
-import { useState,useEffect } from "react";
+import {useEffect } from "react";
 import productDB from '../../assets/img/disjuntor_bipolar.png';
 import productDM from '../../assets/img/disjuntor_monopolar.png';
 import productDt from '../../assets/img/disjuntor_tripolar.png';
 import productLL from '../../assets/img/lampada-led.png';
+import { useProductCart } from '../../context/cartContext';
 
 
 export interface ItemListProps {
@@ -18,8 +19,8 @@ export interface ItemListProps {
 }
 
 const ItemList = () => {
-  const [products, setProducts] = useState<ItemListProps[]>([]);
   
+  const {products,setProducts}= useProductCart();
     const productsData = (): Promise<ItemListProps[]> => {
       return new Promise((resolve) => {
         setTimeout(() => {
@@ -49,7 +50,7 @@ const ItemList = () => {
   
       onMount();
     }, []); 
-
+      
   
   return (
     <div className='flex flex-wrap gap-10 justify-center'>
@@ -57,10 +58,7 @@ const ItemList = () => {
         <Item key={index} {...item} />
    
       ))}
-      
-
-    
-         
+            
     </div>
   );
    
