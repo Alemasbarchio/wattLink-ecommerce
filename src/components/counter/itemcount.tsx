@@ -24,37 +24,16 @@ const CounterItem = ({ stock, initial, onAdd }: ItemCountProps) => {
 
   }, [stockQtd])
 
-  const { products, cartProduts, setCartProduts } = useProductCart();
-
-  const createArrayCart = () => {
-    const updateCartProducts = [...cartProduts];
-    const productByBData = products.find((produto) => (produto.name === (name)));
-    const isProductCart = updateCartProducts.some((produto) => produto.id === productByBData?.id)
-
-    const addNumberItens = { ...productByBData, qtdItens: value } // adicionando parâmetro n°itens ao carrinho
-    addNumberItens.qtdStock = stockQtd - value;
-
-    if (!isProductCart) {
-      updateCartProducts.push(addNumberItens);
-      setCartProduts(updateCartProducts);
-
-    } else {// se o produto ja existir no carrinho modificar apenas quantidade de itens e estoque
-      console.log('Produto já existe no carrinho.');
-      //
-      let updateNumberItens = updateCartProducts.find((produto) => produto.id === productByBData?.id)
-      updateNumberItens.qtdItens = value + updateNumberItens.qtdItens;
-      updateNumberItens.qtdStock = addNumberItens.qtdStock;
-
-    }
-
-  }
+  const {cartProduts,AddProductCart} = useProductCart();
 
   const addcart = () => {
-
     if (value <= stockQtd && stockQtd !== 0) {
       setStockQtd((prevStok => prevStok - value))
       onAdd(value);
-      createArrayCart();
+      if(name!==undefined){
+        AddProductCart(name,value,stockQtd)
+      }
+      
     }
 
   }

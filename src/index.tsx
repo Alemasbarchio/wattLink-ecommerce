@@ -3,7 +3,29 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import { Routers } from './routers';
 import { CartProductProvider } from './context/cartContext';
+import { initializeApp } from "firebase/app";
 
+
+const firebaseConfig = {
+
+  apiKey: "AIzaSyAcgMRByMs-LanZUadlhRQCKVic-Ti2XGA",
+
+  authDomain: "coderhouse-ecommerce-c81f8.firebaseapp.com",
+
+  projectId: "coderhouse-ecommerce-c81f8",
+
+  storageBucket: "coderhouse-ecommerce-c81f8.appspot.com",
+
+  messagingSenderId: "246921495771",
+
+  appId: "1:246921495771:web:4522ef449228710f0bb8fe"
+
+};
+
+
+// Initialize Firebase
+
+ initializeApp(firebaseConfig);
 
 
 const root = ReactDOM.createRoot(
@@ -11,6 +33,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <CartProductProvider>
+   
      <Routers/>
    </CartProductProvider>
  

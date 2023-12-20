@@ -18,7 +18,7 @@ interface ItemListProps {
 const ItemDetailContainer = () => {
   const { name } = useParams<{ name: string }>();
   const { products,cartProduts } = useProductCart(); 
-  console.log(cartProduts);
+  
   
   const [detailProduct, setDetailProduct] = useState<ItemListProps | null>(null);
 

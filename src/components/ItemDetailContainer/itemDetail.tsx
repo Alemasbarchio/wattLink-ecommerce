@@ -27,7 +27,7 @@ const ItemDetail = ({ name, price, imgProduct, qtdStock }: ItemDetailProps) => {
         <li className="border-green-300 border p-2  w-2/12 flex flex-col">
           <h2 className="text-green-800 font-bold text-center text-3xl" >{name}</h2>
           <img src={imgProduct} />
-          <p className="text-2xl"> {price}</p>
+          <p className="text-2xl"> R$ { price}</p>
           <CounterItem stock={qtdStock} initial={1} onAdd={AddToCart} />
 
         </li>
