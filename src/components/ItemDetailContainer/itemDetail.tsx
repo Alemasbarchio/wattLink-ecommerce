@@ -22,9 +22,9 @@ const ItemDetail = ({ name, price, imgProduct, qtdStock }: ItemDetailProps) => {
 
     <div className="pt-5">
 
-      <ul className="flex justify-center  text-center gap-10 pr-10  " >
+      <ul className="flex justify-center  text-center gap-10 " >
 
-        <li className="border-green-300 border p-2  w-2/12 flex flex-col">
+        <li className="border-green-300 border p-4 w-72 flex flex-col">
           <h2 className="text-green-800 font-bold text-center text-3xl" >{name}</h2>
           <img src={imgProduct} />
           <p className="text-2xl"> R$ { price}</p>
