@@ -10,6 +10,7 @@ import productCP from '../../assets/img/cabo preto.png';
 import { getFirestore, doc, getDoc, collection, getDocs } from 'firebase/firestore'
 
 import { useProductCart } from '../../context/cartContext';
+import { Loading } from '../Loading/loading';
 
 
 export interface ItemListProps {
@@ -73,15 +74,13 @@ const ItemList = () => {
 
       const itemsCollection = collection(db, 'produtos');
       getDocs(itemsCollection).then((item) => {
-
+        setTimeout(() => {
         item.docs.map((produto) => {
-          const teste = produto.data().produtos;
-          console.log(teste);
-
-          setProducts(teste);
+          const dbCollection = produto.data().produtos;
+          setProducts(dbCollection);
         });
 
-
+      }, 1000);
       })
     }
     onMount();
@@ -95,7 +94,7 @@ const ItemList = () => {
         <Item key={index} {...item} />
 
       ))}
-
+ {products.length === 0 && <Loading loading={true} />}
     </div>
   );
 
