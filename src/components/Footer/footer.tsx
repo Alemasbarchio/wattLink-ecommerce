@@ -9,7 +9,7 @@ const Footer = () => {
 
             </div>
             <ul className="flex gap-5 cursor-pointer justify-center items-center">
-               <li><span className='font-bold'>ale_maschio@hotmail.com</span> </li>
+               <li><span className='font-bold'>WattLink Soluções em Energia</span> </li>
                  
             </ul>
             
