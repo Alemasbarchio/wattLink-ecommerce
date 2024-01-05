@@ -1,4 +1,4 @@
-import React, { ChangeEvent, createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useState } from "react";
 
 interface IBDProduct {
    products: {
@@ -49,7 +49,7 @@ const CartProductProvider = ({ children }: IProvider) => {
 
       if (productByBData) {
          const addNumberItens = { ...productByBData, qtdItens: value} // adicionando parâmetro n°itens ao carrinho
-         addNumberItens.qtdStock = stockQtd - value;
+        
         
           
          if (!isProductCart) {
@@ -59,16 +59,13 @@ const CartProductProvider = ({ children }: IProvider) => {
          else {// se o produto ja existir no carrinho modificar apenas quantidade de itens e estoque
             let updateNumberItens = updateCartProducts.find((produto) => produto.id === productByBData?.id)
             updateNumberItens.qtdItens = value + updateNumberItens.qtdItens;
-            updateNumberItens.qtdStock = addNumberItens.qtdStock;
+           
          
          }
 
       }
 
    }
-   
-     
-  
    
 
    return (
