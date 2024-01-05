@@ -16,8 +16,11 @@ const Loading= ({ loading }:LoadingProps) => {
               src={logo}
               alt="Carregando..."
               className="w-12 h-12 absolute"
+              
             />
+          
         </div>
+       
         </div>
       )}
     </>
