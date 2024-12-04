@@ -2,15 +2,17 @@ import React, { createContext, useContext, useState } from "react";
 
 interface IBDProduct {
    products: {
-      id: number;
+      _id: string;
       name: string;
+      description:string,
       price: number;
       imgProduct: string;
       qtdStock: number;
    }[];
    setProducts: (products: {
-      id: number;
+      _id: string;
       name: string;
+      description:string,
       price: number;
       imgProduct: string;
       qtdStock: number;
@@ -44,23 +46,24 @@ const CartProductProvider = ({ children }: IProvider) => {
 
    const AddProductCart = (name: string, value: number, stockQtd: number) => {
       const updateCartProducts = [...cartProduts];
+      
+    
       const productByBData = products.find((produto) => (produto.name === (name)));
-      const isProductCart = updateCartProducts.some((produto) => produto.id === productByBData?.id)
+      
+      const isProductCart = updateCartProducts.some((produto) => produto._id === productByBData?._id)
+      
 
       if (productByBData) {
          const addNumberItens = { ...productByBData, qtdItens: value} // adicionando parâmetro n°itens ao carrinho
-        
-        
-          
+                  
          if (!isProductCart) {
             updateCartProducts.push(addNumberItens);
             setCartProduts(updateCartProducts);
          }
          else {// se o produto ja existir no carrinho modificar apenas quantidade de itens e estoque
-            let updateNumberItens = updateCartProducts.find((produto) => produto.id === productByBData?.id)
+            let updateNumberItens = updateCartProducts.find((produto) => produto._id === productByBData?._id)
             updateNumberItens.qtdItens = value + updateNumberItens.qtdItens;
-           
-         
+                    
          }
 
       }

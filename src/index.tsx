@@ -6,6 +6,8 @@ import { CartProductProvider } from './context/cartContext';
 import { initializeApp } from "firebase/app";
 
 
+
+
 const firebaseConfig = {
 
   apiKey: "AIzaSyAcgMRByMs-LanZUadlhRQCKVic-Ti2XGA",
@@ -25,7 +27,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 
- initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 
 const root = ReactDOM.createRoot(
@@ -33,10 +35,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <CartProductProvider>
-   
-     <Routers/>
-   </CartProductProvider>
- 
+       
+    <Routers />
+       
+  </CartProductProvider>
+
 );
 
 // If you want to start measuring performance in your app, pass a function

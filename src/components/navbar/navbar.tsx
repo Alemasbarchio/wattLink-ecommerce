@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 
 
+
 const NavBar = () => {
   
   return (
@@ -14,13 +15,21 @@ const NavBar = () => {
             src={logo}
             alt="logo" />
         </div>
-        <ul className="flex gap-5 justify-center items-center">
+        <ul className="flex gap-2 justify-center items-center">
+          <li className="border-r-2 border-stone-500 pr-6 text-black"  >Conheça a WattLink</li>
           <Link to={`/`}>
-            <li>home</li>
+            <li className="border-r-2 border-stone-500 pr-6">home</li>
           </Link>
+
+          <Link to={`/produtos`}>
+          <li className="border-r-2 border-stone-500 pr-6">Produtos</li>
+          </Link>
+          <li className="border-r-2 border-stone-500 pr-6">Contato</li>
           
         </ul>
         <CarWid />
+       
+       
       </div>
       
      

@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent,useState } from "react";
 import { useProductCart } from '../../context/cartContext';
 import { useParams } from 'react-router-dom';
 

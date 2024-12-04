@@ -11,7 +11,7 @@ import { Footer } from "../Footer/footer";
 
 
 interface ItemListProps {
-  id: number;
+  _id: string;
   name: string;
   price: number;
   imgProduct: string;
@@ -38,8 +38,8 @@ const ItemDetailContainer = () => {
   const getItem = async () => {
     try {
       const productsDataResult = await getProducts();
-      const productByName = productsDataResult.find((produto) => produto.name === name);
-
+      const productByName = productsDataResult.find((produto) => produto.name===name);
+     
       if (productByName) {
         setDetailProduct(productByName);
       } else {
@@ -61,7 +61,7 @@ const ItemDetailContainer = () => {
       <LogoContents />
       <div className="flex justify-evenly items-center pl-48">
         {detailProduct ? <ItemDetail {...detailProduct} /> : <Loading loading={true} />}
-        { detailProduct ?<ProductSummary nameQuery={name}/>:null} 
+        {detailProduct ?<ProductSummary nameQuery={name}/>:null} 
        
         
       </div>

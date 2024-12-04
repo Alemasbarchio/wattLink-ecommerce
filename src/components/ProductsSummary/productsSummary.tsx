@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { useProductCart } from "../../context/cartContext";
-import { useEffect } from "react";
+
 
 interface Props{
 nameQuery?:string;
@@ -32,7 +32,7 @@ return(
               <div className="flex gap-10 pt-32">
               <Link to={`/carrinho/`}>
                 <button className="bg-green-600 border p-2 rounded-lg focus:border-blue-300 hover:opacity-75">
-                  Finalizar Compra
+                 Ir para o carrinho
                 </button>
                 </Link>
                 <Link to={`/`}>
